@@ -19,10 +19,8 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
-# Copy executable from builder
+#Copy executable from builder
 COPY --from=builder /go/src/app/run .
-COPY --from=builder /go/bin/reflex /usr/local/bin/reflex
 
 EXPOSE 8080
-
 CMD ["./run"]

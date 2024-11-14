@@ -17,9 +17,9 @@ func main() {
 
 	router := gin.Default()
 
-	router.GET("/account", func(c *gin.Context) {
+	router.GET("/api/account", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "account",
+			"very": "hei hei!",
 		})
 	})
 
