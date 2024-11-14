@@ -1,4 +1,4 @@
-FROM golang:alpine as builder
+FROM golang:alpine AS builder
 
 WORKDIR /go/src/app
 
@@ -19,7 +19,6 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
-#Copy executable from builder
 COPY --from=builder /go/src/app/run .
 
 EXPOSE 8080
